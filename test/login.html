@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+	</head>
+	<script src="https://www.jq22.com/jquery/jquery-1.10.2.js"></script>
+	
+	<style>
+		body{background-color: #222222}
+	</style>
+	<script type="text/javascript">
+	var mybutton =document.querySelector('#login');
+	var array=[['admin','admin'],['itshixun','itshixun'],['jwy','123']];
+	function Lg(){
+		var usrName = document.getElementById("loginname").value;
+		var usrPwd= document.getElementById("pwd").value;
+		var flag = 0;
+		for(var i=0;i<array.length;i++){
+			if(array[i][0]==usrName&&array[i][1]==usrPwd){
+				alert("用户登录成功，欢迎"+usrName+"登录");
+				flag=1;
+				break;
+			}
+			
+			if(usrName == null && usrPwd == null){
+				flag=2;
+			}
+		}
+		if(flag==0){
+		alert('输入密码错误，请再试一次');
+		}
+	}
+	</script>
+	<body>
+		
+		<form style="">
+		   <table width="800px" height="500px" border="1px" cellspacing="0" style="background-color: lightgray;">
+		    <tbody>
+		     <tr height="40px">
+		      <td align="center" rowspan="4" ><font size="5">用户登录</font></td>
+		      <td colspan="2"></td>
+		      
+		     </tr>
+		     <tr height="40px">
+		      
+		      <td align="center" ><font size="5">用户名：</font></td>
+		      <td align="center">
+		       <input type="text" id="loginname"style="width: 250px;height: 30px ;font-size: large;"placeholder="请输入用户名"required />
+		      </td>
+		     </tr>
+		     <tr height="40px">
+		      
+		      <td align="center" ><font size="5" >密码：</font></td>
+		      <td align="center">
+		       <input type="password"id="pwd" size="30" style="width: 250px;height: 30px ;font-size: large;"placeholder="请输入密码"/>
+		      </td>
+		     </tr>
+		     <tr height="40px">
+		      
+		      <td colspan="2" align="center"  >
+		       <input type="button" id="login" value="登录" style="width: 160px;height: 60px;background-color: darkseagreen;font-size: large;"
+			   onclick="Lg()"/>
+		      </td>
+		      
+		     </tr>
+		    </tbody>
+		   </table>
+		  </form>
+		  <canvas id="canvas" width="1920" height="950"></canvas>
+		  <style>canvas {display: block;position: relative;zindex: 1;pointer-events: none;position: fixed;top: 0;}</style>
+		  <script src="confetti.js"></script>
+	</body>
+</html>
